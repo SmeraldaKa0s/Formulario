@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "../Image";
 import logo from "../../assets/logo.png"
 import Button from "../Button";
+import { Link } from "react-router-dom";
 
 interface IObjectKeys {
   [key: string]: string | number | undefined;
@@ -18,7 +19,6 @@ interface FormData extends IObjectKeys {
 
 
 }
-
 
 const Form = () => {
 
@@ -45,12 +45,12 @@ const Form = () => {
             alt="logo" />
         </div>
         <form className="gap-5 flex flex-col" onSubmit={handleLogin}>
-          <div className="">
+          <div>
             <div><label htmlFor="username">Usuario</label></div>
             <input value={formData.username} onChange={handleInput} id="username" className="hover:bg-orange-100 placeholder:text-xs" type="text" name="username"
               placeholder="Esme23" required></input>
           </div>
-          <div className="">
+          <div>
             <div><label htmlFor="password">Password</label></div>
             <input value={formData.password} onInput={handleInput} id="password" className="hover:bg-orange-100" type="password" name="password"
               placeholder="******" required></input>
@@ -59,8 +59,9 @@ const Form = () => {
             <Button
               title="Enviar"
             />
-            <Button
-              title="Registrarse" />
+            <Link to="signup"
+              className="bg-violet-400/75 border-2 border-violet-400/50 hover:bg-violet-200/50 shadow-lg shadow-orange-600/50 rounded-lg p-1 text-sm text-zinc-800">
+              Registrarse</Link>
           </div>
         </form>
       </div>
