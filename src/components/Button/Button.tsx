@@ -1,7 +1,15 @@
+interface ButtonProps {
+    title: string,
+    onClick?: any,
 
-const Button = () => {
-    return(
-        <button></button>
+    // TODO: preguntar que type poner en onClick
+}
+
+const Button = ({ title, onClick }: ButtonProps) => {
+    return (
+        <button onClick={onClick}>
+            {title}
+        </button>
     )
 }
 
