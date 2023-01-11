@@ -5,6 +5,6 @@
 @tailwind utilities;
 
 * {
-    @apply text-zinc-900 box-border p-0 m-0;
+    @apply text-zinc-800 box-border p-0 m-0;
     font-family: "Roboto";
   }

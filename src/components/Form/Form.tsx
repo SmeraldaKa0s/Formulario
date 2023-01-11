@@ -33,13 +33,13 @@ const Form = () => {
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     console.log(formData)
-    setFormData({username:"", password:""})
+    setFormData({ username: "", password: "" })
   }
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="w-96 h-80 bg-orange-400 flex justify-around items-center flex-col">
-        <div className="w-1/2">
+      <div className="w-96 h-80 bg-orange-400 rounded-sm shadow-lg shadow-zinc-500/50 flex justify-around items-center flex-col">
+        <div className="w-2/3 pt-2">
           <Image
             image={logo}
             alt="logo" />
@@ -55,9 +55,13 @@ const Form = () => {
             <input value={formData.password} onInput={handleInput} id="password" className="hover:bg-orange-100" type="password" name="password"
               placeholder="******" required></input>
           </div>
-          <Button
-            title="Enviar"
-          />
+          <div className="flex justify-evenly">
+            <Button
+              title="Enviar"
+            />
+            <Button
+              title="Registrarse" />
+          </div>
         </form>
       </div>
     </div>
